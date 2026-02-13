@@ -53,7 +53,7 @@ This was very helpful in figuring out the details of how to use getUserMedia:
 				currentDeviceNumber = 0;
 				currentVideoStream = "";
 				// Before we can get a list of media devices we need to request media permissions from the browser...
-				navigator.mediaDevices.getUserMedia({video:{width:{ideal:4096},height:{ideal:2160}}})
+				navigator.mediaDevices.getUserMedia({video:{width:{ideal:1920},height:{ideal:1080}}})
 				.then(function (devices) {
 					// ...then we can get a list of available media input/output devices...
 					navigator.mediaDevices.enumerateDevices()
@@ -137,5 +137,6 @@ This was very helpful in figuring out the details of how to use getUserMedia:
 		</div>
 	</body>
 </html>
+
 
 
