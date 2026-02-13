@@ -53,7 +53,7 @@ This was very helpful in figuring out the details of how to use getUserMedia:
 				currentDeviceNumber = 0;
 				currentVideoStream = "";
 				// Before we can get a list of media devices we need to request media permissions from the browser...
-				navigator.mediaDevices.getUserMedia({video:{width:{ideal:1920},height:{ideal:1080}}})
+				navigator.mediaDevices.getUserMedia({video:{width:{ideal:1280},height:{ideal:720}}})
 				.then(function (devices) {
 					// ...then we can get a list of available media input/output devices...
 					navigator.mediaDevices.enumerateDevices()
@@ -75,7 +75,7 @@ This was very helpful in figuring out the details of how to use getUserMedia:
 			function startVideo(videoDeviceNumber) {
 				if (navigator.mediaDevices.getUserMedia) {
 					// We set the mediaDevice constraints to an "ideal" 4K resolution, the browser will simply scale down to the best resolution available.
-					navigator.mediaDevices.getUserMedia({video:{width:{ideal:1920},height:{ideal:1080},deviceId:{exact:videoDevices[currentDeviceNumber]["deviceId"]}}})
+					navigator.mediaDevices.getUserMedia({video:{width:{ideal:1280},height:{ideal:720},deviceId:{exact:videoDevices[currentDeviceNumber]["deviceId"]}}})
 					.then(function (stream) {
 						video.srcObject = stream;
 						currentVideoStream = stream;
@@ -137,6 +137,7 @@ This was very helpful in figuring out the details of how to use getUserMedia:
 		</div>
 	</body>
 </html>
+
 
 
 
